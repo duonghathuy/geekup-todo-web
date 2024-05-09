@@ -47,7 +47,7 @@ const TodoPage = () => {
   }
 
   const handleMarkDone = (taskId) => {
-    setIsTasksLoading(prevIsLoading => ({
+    setIsMarkDoneLoading(prevIsLoading => ({
       ...prevIsLoading,
       [taskId]: true,
     }))
