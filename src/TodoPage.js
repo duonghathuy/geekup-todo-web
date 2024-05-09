@@ -114,13 +114,14 @@ const TodoPage = () => {
           </div>
           <div className='tasks'>
             {!selectedUser ? <p className='no-data'>No data</p> : isTasksLoading[selectedUser] ? <div className='spinner tasks-loading'></div> :
-            tasks.sort((a, b) => {
+            <div className='tasks-data'>
+            {tasks.sort((a, b) => {
               if (a.completed === true && b.completed === false) return 1;
               if (a.completed === false && b.completed === true) return -1;
               return 0;
-            } )
+            })
             .map(task => (
-              <div className='task-item' key={task.id}>
+              <div className='task-item' >
                 <div className='title'>
                   {task.completed ? <CheckCircleIcon /> : <MinusSquareIcon />}
                   <p>{task.title}</p>
@@ -130,14 +131,15 @@ const TodoPage = () => {
                   <button 
                     className='mark-done-btn' 
                     onClick={() => handleMarkDone(task.id)}
-                    disabled={isMarkDoneLoading[task.id]}
                   >
-                      {isMarkDoneLoading[task.id] ? <div className='spinner'></div> : null}
-                      <p>Mark done</p>
+                    {isMarkDoneLoading[task.id] ? <div className='spinner'></div> : null}
+                    <p>Mark done</p>
                   </button> : null}
                 </div>
               </div>
             ))}
+            </div>
+            }
           </div>
           <div className='tasks-analysis'>
             <p>Done {completedTasks.length}/{tasks.length} tasks</p>
@@ -156,16 +158,14 @@ const selectUserStyle = {
     borderRadius: '6px',
     width: '230px',
     fontSize: '14px',
-    fontFamily: "Roboto",
-    
+    fontFamily: "Roboto"
   }),
   option: (provided, state) => ({
     ...provided,
     width: '230px',
-    color: 'rgb(0,0,0)',
-    backgroundColor: state.isSelected ? 'rgb(63,150,254,0.25)' : 'white',
+    backgroundColor: 'rgb(255,255,255)',
     '&:hover': {
-      backgroundColor: state.isSelected ? 'rgb(63,150,254,0.25)' : 'rgb(239,239,239, 0.5)',
+      backgroundColor: state ? 'rgb(239,239,239, 0.5)' : 'rgb(255,255,255)',
     },
-  }),
+  })
 };
