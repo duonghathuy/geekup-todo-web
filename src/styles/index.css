@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.logo {
+    width: auto;
+    height: 30px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid rgb(239,239,239);
+    font-weight: 500;
+}
+
+.header>p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    padding: 0 1rem;
+}
+
+.select-user {
+    width: 230px;
+    margin: 8px 0;
+}
+
+.body {
+    margin: 2rem 3rem;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+}
+
+.select-user-label, .tasks-label {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-right: 3rem;
+    font-weight: 500;
+}
+
+.line {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+    background-color: rgb(239, 239, 239);
+    margin-left: 15px;
+}
+
+.tasks {
+    border: 1px solid rgb(239, 239, 239);
+    width: 100%;
+    height: 480px;
+    margin: 8px 0;
+    border-radius: 6px;
+    overflow: auto;
+}
+
+.task-item {
+    padding: 16px;
+    border-bottom: 1px solid rgb(239, 239, 239);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.task-item .title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.task-item .title >p {
+    margin: 0 5px;
+}
+
+.mark-done-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 5px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0,0,0);
+    border: 1px solid rgb(211,214,218);
+    border-radius: 4px;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.mark-done-btn p {
+    margin: 5px;
+}
+
+.mark-done-btn:hover {
+    color: rgb(61, 166, 236);
+    border-color: rgb(61, 166, 236);
+}
+
+.spinner {
+    border: 1px solid rgb(255, 255, 255);
+    border-top: 1px solid rgb(61, 166, 236);
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
