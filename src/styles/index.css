@@ -54,13 +54,20 @@
     margin: 8px 0;
     border-radius: 6px;
     overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .task-item {
+    min-height: 15px;
     padding: 16px;
     border-bottom: 1px solid rgb(239, 239, 239);
     display: flex;
     flex-direction: row;
+    width: calc(100vw - 10rem);
+    
     align-items: center;
     justify-content: space-between;
 }
@@ -103,6 +110,20 @@
     width: 12px;
     height: 12px;
     animation: spin 1s linear infinite;
+}
+
+.tasks-loading {
+    margin: 20px;
+    border: 3px solid rgb(255, 255, 255);
+    border-top: 3px solid rgb(61, 166, 236);
+    width: 20px;
+    height: 20px;
+}
+
+.no-data {
+    color: rgb(211,214,218);
+    margin: 20px;
+    font-weight: 400;
 }
 
 @keyframes spin {
